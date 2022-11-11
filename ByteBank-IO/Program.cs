@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using System.Text;
+
 
 namespace ByteBank_IO
 {
@@ -28,11 +30,19 @@ namespace ByteBank_IO
     }
     static void EscreverBuffer(byte[] buffer)
     {
+
+      var utf8 = new UTF8Encoding();
+
+      var texto = utf8.GetString(buffer);
+      Console.Write(texto);
+
+      /*
       foreach (var meuByte in buffer)
       {
-        Console.Write(meuByte);
-        Console.Write(" ");
+          Console.Write(meuByte);
+          Console.Write(" ");
       }
+      */
     }
   }
 }
